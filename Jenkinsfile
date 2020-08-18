@@ -21,7 +21,7 @@ pipeline {
 		stage('Test') {
 			steps {
 				sh 'sudo pip3 install pytest'
-				sh 'pytest test.py'
+				sh 'sudo pytest test.py'
 			}
 		}
 	}
