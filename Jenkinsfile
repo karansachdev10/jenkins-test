@@ -1,9 +1,5 @@
 pipeline {
-	agent {
-		docker {
-			image 'python3.7'
-		}
-	}
+	agent any
     	stages {
 		stage('Clean code') {
         			steps {
