@@ -1,5 +1,9 @@
 pipeline {
-	agent any
+	agent {
+		docker {
+			image 'python3.7'
+		}
+	}
     	stages {
 		stage('Clean code') {
         			steps {
@@ -12,9 +16,10 @@ pipeline {
             				checkout scm
         			}
     		}
-		stage('Test') {
+		stage('Build') {
 			steps {
-				sh "pytest test.py"
+				sh 'python3 -m venv venv'
+				sh 'source venv/bin/activate'
 			}
 		}
 	}
