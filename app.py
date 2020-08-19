@@ -35,5 +35,5 @@ def fibonacci(number):
     
     
 print(is_prime(2))
-print(factorial(5)
-print(fibonacci(10)
+print(factorial(5))
+print(fibonacci(10))
