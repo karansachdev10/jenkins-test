@@ -29,7 +29,7 @@ pipeline {
 		}
 		stage('Deploy') {
 			steps {
-				sh 'sudo scp -i /home/ec2-user/karan_kp.pem -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/jenkins-test ec2-user@54.90.32.103:/tmp'
+				sh 'ssh -i karan_kp.pem ec2-user@54.90.32.103'
 			}
 		}
 		
