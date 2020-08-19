@@ -24,14 +24,13 @@ pipeline {
 		stage('Test') {
 			steps {
 				echo "Testing"
+				sh 'pylint app.py'
 				sh 'python test.py'
 			}
 		}
 		stage('Deploy') {
 			steps {
 				sh 'sudo scp -i /home/ec2-user/karan_kp.pem -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/jenkins-test ec2-user@54.90.32.103:/tmp'
-				sh 'sudo scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/jenkins-test/app.py ec2-user@54.90.32.103:/tmp'
-				sh 'sudo scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/jenkins-test/test.py ec2-user@54.90.32.103:/tmp'
 			}
 		}
 		
