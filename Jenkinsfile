@@ -17,17 +17,13 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "Building"
-				sh "pip3 install -r requirements.txt"
-				sh "pylint app.py"
 				sh 'python3 -m venv venv'
 				sh 'source venv/bin/activate'
-				sh 'sudo pip3 install pylint'
 			}
 		}
 		stage('Test') {
 			steps {
 				echo "Testing"
-				sh 'pylint app.py'
 				sh 'python test.py'
 			}
 		}
