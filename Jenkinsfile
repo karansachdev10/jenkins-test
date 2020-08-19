@@ -34,7 +34,8 @@ pipeline {
 				sh 'sudo yum install python3'
 				sh 'python3 -m venv venv'
 				sh 'source venv/bin/activate'
-				sh 'python3 jenkins-test/app.py'
+				sh 'cd jenkins-test'
+				sh 'ls'
 			}
 		}
 		
