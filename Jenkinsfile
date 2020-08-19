@@ -17,7 +17,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo "Building"
-				sh "pip install -r requirements.txt"
+				sh "sudo pip3 install -r requirements.txt"
 				sh "pylint app.py"
 				sh 'python3 -m venv venv'
 				sh 'source venv/bin/activate'
