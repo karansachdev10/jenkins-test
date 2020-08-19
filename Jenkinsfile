@@ -30,6 +30,7 @@ pipeline {
 		stage('Deploy') {
 			steps {
 				echo "Deploying"
+				sh 'sudo scp -o StrictHostKeyChecking=no -r /var/lib/jenkins/workspace/jenkins-test/app.py ec2-user@54.90.32.103:/home/ec2-user/jenkins-test@tmp'
 				sh 'sudo ssh -i /home/ec2-user/karan_kp.pem ec2-user@54.90.32.103'
 				sh 'sudo yum install python3'
 				sh 'python3 -m venv venv'
