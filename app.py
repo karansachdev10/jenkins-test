@@ -31,3 +31,9 @@ def fibonacci(number):
         return number
     else:
         return fibonacci(number-1) + fibonacci(number-2)
+
+    
+    
+print(is_prime(2))
+print(factorial(5)
+print(fibonacci(10)
