@@ -34,7 +34,7 @@ pipeline {
 				sh 'sudo yum install python3'
 				sh 'python3 -m venv venv'
 				sh 'source venv/bin/activate'
-				sh 'ls'
+				sh 'python3 app.py'
 			}
 		}
 		
