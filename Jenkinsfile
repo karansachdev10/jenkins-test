@@ -29,7 +29,12 @@ pipeline {
 		}
 		stage('Deploy') {
 			steps {
+				echo "Deploying"
 				sh 'sudo ssh -i /home/ec2-user/karan_kp.pem ec2-user@54.90.32.103'
+				sh 'sudo yum install python3'
+				sh 'python3 -m venv venv'
+				sh 'source venv/bin/activate'
+				sh 'python3 jenkins-test/app.py'
 			}
 		}
 		
