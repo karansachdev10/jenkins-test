@@ -29,7 +29,7 @@ pipeline {
 		}
 		stage('Deploy') {
 			steps {
-				sh 'ssh ec2-user@54.90.32.103'
+				sh 'sudo ssh -i /home/ec2-user/karan_kp.pem ec2-user@54.90.32.103'
 			}
 		}
 		
